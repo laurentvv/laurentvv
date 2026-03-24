@@ -7,7 +7,7 @@ Basé dans le Grand Est, France 🇫🇷, j'ai plus de 13 ans d'expérience dans
 ---
 
 ### 🚀 Ce que je fais actuellement
-- 🏢 **En poste :** Administrateur Systèmes & Réseaux chez **Kalidea**.
+- 🏢 **En poste :** Administrateur Systèmes & Réseaux.
 - 🧠 **Apprentissage :** Immersion dans l'univers des **LLM** (Large Language Models) et des **Agents IA**.
 - 🛠️ **Projets :** Développement d'outils de web crawling comme `crawl4ai-mcp` intégrés aux assistants IA.
 

@@ -1,23 +1,25 @@
-# Salut, moi c'est Laurent ! 👋
+# Hi, I'm Laurent! 👋
 
-### Administrateur Systèmes & Réseaux Senior | Expert Cloud & IA Ops
+### Senior Systems & Network Administrator | Cloud & AI Ops Expert
 
-Basé dans le Grand Est, France 🇫🇷, j'ai plus de 13 ans d'expérience dans la gestion d'infrastructures critiques. Mon objectif actuel est de fusionner l'administration système traditionnelle avec la puissance de l'IA et de l'automatisation.
+Based in Grand Est, France 🇫🇷, I have over 13 years of experience managing critical infrastructure. My current goal is to bridge traditional system administration with the power of AI and automation.
+
+---
+
+### 🚀 What I'm Up To
+
+* 🏢 **Current Role:** Systems & Network Administrator.
+* 🧠 **Learning:** Diving deep into the world of **LLMs** (Large Language Models) and **AI Agents**.
+* 🛠️ **Projects:** Developing web crawling tools like `crawl4ai-mcp` integrated with AI assistants.
+
+### 🛠️ Tech Stack
+
+* **Ops & Cloud:** Kubernetes, Docker, Ansible, Terraform.
+* **Systems:** Linux (AlmaLinux, Debian), Windows Server.
+* **Code & AI:** Python (FastAPI, Scikit-learn), PowerShell Scripting, MCP.
+
+### 📊 GitHub Stats
 
 ---
 
-### 🚀 Ce que je fais actuellement
-- 🏢 **En poste :** Administrateur Systèmes & Réseaux.
-- 🧠 **Apprentissage :** Immersion dans l'univers des **LLM** (Large Language Models) et des **Agents IA**.
-- 🛠️ **Projets :** Développement d'outils de web crawling comme `crawl4ai-mcp` intégrés aux assistants IA.
-
-### 🛠️ Stack Technique
-- **Ops & Cloud :** Kubernetes, Docker, Ansible, Terraform.
-- **Systèmes :** Linux (AlmaLinux, Debian), Windows Server.
-- **Code & IA :** Python (FastAPI, Scikit-learn), Scripting PowerShell, MCP.
-
-### 📊 Statistiques GitHub
-![GitHub Stats Card](https://ghstats.dev/api/card?username=laurentvv&border_radius=19.5&custom_title=Mes+stats)
-
----
-*"Sysadmin passionné par l'automatisation, convaincu que l'IA est le prochain grand levier de l'infrastructure informatique."*
+*"Sysadmin passionate about automation, convinced that AI is the next major lever in IT infrastructure."*

@@ -19,7 +19,7 @@ Based in Grand Est, France 🇫🇷, I have over 13 years of experience managing
 * **Code & AI:** Python (FastAPI, Scikit-learn), PowerShell Scripting, MCP.
 
 ### 📊 GitHub Stats
-
+![GitHub Stats Card](https://ghstats.dev/api/card?username=laurentvv&border_radius=19.5&custom_title=Mes+stats)
 ---
 
 *"Sysadmin passionate about automation, convinced that AI is the next major lever in IT infrastructure."*

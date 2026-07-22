@@ -17,7 +17,7 @@ Basé dans le Grand Est, France 🇫🇷, j'ai plus de 13 ans d'expérience dans
 - **Code & IA :** Python (FastAPI, Scikit-learn), Scripting PowerShell, MCP.
 
 ### 📊 Statistiques GitHub
-![Les stats GitHub de Laurent](https://github-readme-stats.vercel.app/api?username=laurentvv&show_icons=true&theme=radical)
+![GitHub Stats Card](https://ghstats.dev/api/card?username=laurentvv&border_radius=19.5&custom_title=Mes+stats)
 
 ---
 *"Sysadmin passionné par l'automatisation, convaincu que l'IA est le prochain grand levier de l'infrastructure informatique."*

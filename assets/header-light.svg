@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 232" width="960" height="232" role="img" aria-label="laurentvv — Senior Systems and Network Administrator | Cloud and AI Ops">
+  <defs>
+    <pattern id="grid-light" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#eaeef2" stroke-width="0.75"/>
+    </pattern>
+    <clipPath id="card-clip-light">
+      <rect x="1" y="1" width="958" height="230" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#card-clip-light)">
+    <!-- Background -->
+    <rect x="0" y="0" width="960" height="232" fill="#ffffff"/>
+    <!-- Subtle technical grid on the right half -->
+    <rect x="590" y="0" width="370" height="232" fill="url(#grid-light)" opacity="0.9"/>
+    <!-- Top accent rail -->
+    <rect x="0" y="0" width="320" height="3" fill="#0969da"/>
+    <rect x="320" y="0" width="320" height="3" fill="#bc4c00"/>
+    <rect x="640" y="0" width="320" height="3" fill="#1a7f37"/>
+  </g>
+
+  <!-- Outer hairline border -->
+  <rect x="1" y="1" width="958" height="230" rx="12" fill="none" stroke="#d0d7de" stroke-width="1"/>
+
+  <!-- Left Editorial Column -->
+  <text x="40" y="48" font-family="'Cascadia Code', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="11.5" font-weight="600" letter-spacing="1.4" fill="#0969da">SYSADMIN · CLOUD · AI OPS · GRAND EST, FR</text>
+
+  <text x="40" y="96" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="38" font-weight="700" letter-spacing="-0.6" fill="#1f2328">
+    <tspan fill="#0969da">@</tspan>laurentvv
+  </text>
+
+  <text x="40" y="130" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" font-weight="600" fill="#24292f">Senior Systems &amp; Network Administrator</text>
+  <text x="40" y="153" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#57606a">Bridging critical infrastructure with local AI &amp; native Rust tooling.</text>
+
+  <!-- Pillar Pills -->
+  <g font-family="'Cascadia Code', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="11.5" font-weight="500">
+    <!-- Pill 1 -->
+    <rect x="40" y="177" width="174" height="28" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+    <circle cx="55" cy="191" r="3.5" fill="#0969da"/>
+    <text x="67" y="195" fill="#24292f">13+ yrs Production</text>
+
+    <!-- Pill 2 -->
+    <rect x="224" y="177" width="148" height="28" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+    <circle cx="239" cy="191" r="3.5" fill="#bc4c00"/>
+    <text x="251" y="195" fill="#24292f">Native Rust Ops</text>
+
+    <!-- Pill 3 -->
+    <rect x="382" y="177" width="178" height="28" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+    <circle cx="397" cy="191" r="3.5" fill="#1a7f37"/>
+    <text x="409" y="195" fill="#24292f">Local Vulkan / GGUF</text>
+  </g>
+
+  <!-- Vertical separator -->
+  <line x1="602" y1="30" x2="602" y2="204" stroke="#eaeef2" stroke-width="1"/>
+
+  <!-- Right Architecture Stack -->
+  <g>
+    <!-- Connectors -->
+    <line x1="774" y1="78" x2="774" y2="94" stroke="#d0d7de" stroke-width="1.25"/>
+    <circle cx="774" cy="86" r="2.2" fill="#57606a"/>
+    <line x1="774" y1="138" x2="774" y2="154" stroke="#d0d7de" stroke-width="1.25"/>
+    <circle cx="774" cy="146" r="2.2" fill="#57606a"/>
+
+    <!-- Layer 1: AI Ops & MCP -->
+    <rect x="630" y="34" width="290" height="44" rx="8" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+    <rect x="630" y="34" width="4" height="44" rx="2" fill="#0969da"/>
+    <text x="646" y="52" font-family="'Cascadia Code', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="11.5" font-weight="600" fill="#1f2328"><tspan fill="#0969da">01</tspan>  AI OPS &amp; MCP</text>
+    <text x="646" y="68" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#57606a">MCP servers · Agent skills · Offline search</text>
+
+    <!-- Layer 2: Native Rust Ops -->
+    <rect x="630" y="94" width="290" height="44" rx="8" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+    <rect x="630" y="94" width="4" height="44" rx="2" fill="#bc4c00"/>
+    <text x="646" y="112" font-family="'Cascadia Code', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="11.5" font-weight="600" fill="#1f2328"><tspan fill="#bc4c00">02</tspan>  NATIVE RUST OPS</text>
+    <text x="646" y="128" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#57606a">SSH · Encrypted backups · Vault · Disk</text>
+
+    <!-- Layer 3: Local AI / Vulkan -->
+    <rect x="630" y="154" width="290" height="44" rx="8" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+    <rect x="630" y="154" width="4" height="44" rx="2" fill="#1a7f37"/>
+    <text x="646" y="172" font-family="'Cascadia Code', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="11.5" font-weight="600" fill="#1f2328"><tspan fill="#1a7f37">03</tspan>  LOCAL VULKAN / GGUF</text>
+    <text x="646" y="188" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#57606a">On-premise inference · No cloud · No CUDA</text>
+  </g>
+</svg>

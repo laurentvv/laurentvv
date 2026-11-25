@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 168" width="960" height="168" role="img" aria-label="Three engineering focus pillars: AI Ops and MCP, Native Rust Systems, Local AI on Vulkan and GGUF">
+  <defs>
+    <clipPath id="c1-dark"><rect x="1" y="4" width="308" height="160" rx="10"/></clipPath>
+    <clipPath id="c2-dark"><rect x="326" y="4" width="308" height="160" rx="10"/></clipPath>
+    <clipPath id="c3-dark"><rect x="651" y="4" width="308" height="160" rx="10"/></clipPath>
+  </defs>
+
+  <!-- Card 1: AI Ops & MCP -->
+  <g clip-path="url(#c1-dark)">
+    <rect x="1" y="4" width="308" height="160" fill="#0d1117"/>
+    <rect x="1" y="4" width="308" height="3" fill="#58a6ff"/>
+  </g>
+  <rect x="1" y="4" width="308" height="160" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+  <text x="21" y="32" font-family="'Cascadia Code', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="10.5" font-weight="600" letter-spacing="1.1" fill="#58a6ff">01 // AI OPS &amp; AGENT TOOLING</text>
+  <text x="21" y="56" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#f0f6fc">MCP Servers &amp; Skills</text>
+  <text x="21" y="81" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#c9d1d9">crawl4ai-mcp-llm · sandbox-win-mcp</text>
+  <text x="21" y="100" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#c9d1d9">md-doc-search · python-health-audit</text>
+  <text x="21" y="119" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#8b949e">NexusAI-Client · graph-orchestrator</text>
+  <line x1="21" y1="133" x2="289" y2="133" stroke="#21262d" stroke-width="1"/>
+  <text x="21" y="151" font-family="'Cascadia Code', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="10.5" fill="#8b949e">Python · uv · Rust · Pydantic · MCP</text>
+
+  <!-- Card 2: Native Rust Ops -->
+  <g clip-path="url(#c2-dark)">
+    <rect x="326" y="4" width="308" height="160" fill="#0d1117"/>
+    <rect x="326" y="4" width="308" height="3" fill="#f0883e"/>
+  </g>
+  <rect x="326" y="4" width="308" height="160" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+  <text x="346" y="32" font-family="'Cascadia Code', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="10.5" font-weight="600" letter-spacing="1.1" fill="#f0883e">02 // NATIVE WINDOWS SYSTEMS</text>
+  <text x="346" y="56" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#f0f6fc">Zero-Bloat Rust Utilities</text>
+  <text x="346" y="81" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#c9d1d9">cuty-ssh · rust-backup · RustPass</text>
+  <text x="346" y="100" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#c9d1d9">strata · rust-note</text>
+  <text x="346" y="119" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#8b949e">SSH2 · KDBX 4.1 · FastCDC · DPAPI</text>
+  <line x1="346" y1="133" x2="614" y2="133" stroke="#21262d" stroke-width="1"/>
+  <text x="346" y="151" font-family="'Cascadia Code', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="10.5" fill="#8b949e">Rust · egui · GPUI · AES-256 · BLAKE3</text>
+
+  <!-- Card 3: Local AI / Vulkan -->
+  <g clip-path="url(#c3-dark)">
+    <rect x="651" y="4" width="308" height="160" fill="#0d1117"/>
+    <rect x="651" y="4" width="308" height="3" fill="#3fb950"/>
+  </g>
+  <rect x="651" y="4" width="308" height="160" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+  <text x="671" y="32" font-family="'Cascadia Code', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="10.5" font-weight="600" letter-spacing="1.1" fill="#3fb950">03 // LOCAL AI PIPELINES</text>
+  <text x="671" y="56" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#f0f6fc">100% Vulkan &amp; GGUF</text>
+  <text x="671" y="81" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#c9d1d9">generator-assets · godot-skill-quality</text>
+  <text x="671" y="100" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#c9d1d9">nextcloud-ai-auto-tag</text>
+  <text x="671" y="119" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#8b949e">No cloud · No CUDA · Reproducible</text>
+  <line x1="671" y1="133" x2="939" y2="133" stroke="#21262d" stroke-width="1"/>
+  <text x="671" y="151" font-family="'Cascadia Code', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="10.5" fill="#8b949e">llama.cpp · Vulkan · Godot · Blender</text>
+</svg>

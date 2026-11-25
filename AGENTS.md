@@ -3,7 +3,7 @@
 > Instructions for any AI coding agent working in this repository.
 > Structure: **common block** (delimited, resyncable) + **project-specific part** (free).
 
-<!-- BEGIN:agents-common v3.2 — block shared across repositories (agents-kit). Do not edit by hand: resync with scripts/sync_agents.py -->
+<!-- BEGIN:agents-common v3.4 — block shared across repositories (agents-kit). Do not edit by hand: resync with scripts/sync_agents.py -->
 <!-- The script only replaces what lies between the BEGIN/END markers; all repository-specific content is preserved -->
 
 > **Priority on conflict**: explicit user instruction > this repo's §7 > this common block. The §5 prohibitions are lifted only on a formal explicit request. This block is overwritten on every sync: add nothing here (lessons → §7, see §6).
@@ -13,7 +13,7 @@
 - Default machine: **Windows 11**, shell **Git Bash** — any deviation (PowerShell 7, WSL, Linux…) is declared in §7; use ONLY the declared shell's commands.
 - Python: **`uv` only** — never `pip install`, never `requirements.txt` (`uv add` / `uv run`).
 - Machine paths: never hardcoded — go through the project configuration (config.py / .env / dedicated section).
-- Code search: on large repositories (> 5k files, or a `.tgrep/` index folder present), prefer the fast indexed `tgrep` CLI from the PATH over recursive `grep`/`find` scans — `tgrep -- "pattern" .`, `tgrep -t <type> -- "pattern" .` (first use: `tgrep index .`; keep `.tgrep/` git-ignored). Below ~2k files, plain `git grep` is already instant.
+- Code search: on large repositories (> 5k files, or a `.tgrep/` index folder present), prefer the fast indexed `tgrep` CLI from the PATH over recursive `grep`/`find` scans — `tgrep -- "pattern" .` (first use: `tgrep index .`, keep `.tgrep/` git-ignored); below ~2k files, plain `git grep` is instant.
 - Text files: **UTF-8 without BOM**, line endings per `.gitattributes`. Never markdown exported or pasted from a rich editor (Notion, Word…): it arrives escaped and becomes unreadable for the agent.
 - Language: **English** for everything written in the repository (code, comments, docs, commit messages, ledger); **French** for chat replies to the user. Any deviation is declared in §7.
 - Long context (architecture, detailed lessons, ecosystem): see the repo's `PROJECT_MEMORY.md` or `docs/` — AGENTS.md stays deliberately short.
@@ -26,7 +26,7 @@ Never rely on the context window alone: it degrades, gets compressed, gets erase
 uv run --no-project .agents/skills/agent-state/scripts/state_agents.py [--repo PATH] <command>
 ```
 
-The dependency (`duckdb>=1.1.0`) is declared inside the script (PEP 723): uv builds and caches an isolated environment — no global install. Tables: `features` (pending | in_progress | completed), `contract_criteria` + `contract_meta` (frozen validation contract, 15-30 criteria, test command), `sprint_progress` (objective + milestones), `execution_log` (append-only event log; no rotation, no archive). **Proportionality**: the ledger is for feature suites — a question or a one-off fix does not open a sprint (one log entry is enough if the ledger exists). The database stays local: `.agent/` and `.agents/` are git-ignored from initialization and never committed (heavy binary, installed scripts — they would bloat public repositories and skew their language stats). A legacy 4-file ledger (`feature_list*.json`, `contract.md`, `progress.md`, `log.md`) is auto-migrated with backup on the first `bootstrap`.
+The dependency (`duckdb>=1.1.0`) is declared in the script (PEP 723): uv builds a cached isolated environment — no global install. Tables: `features` (pending | in_progress | completed), `contract_criteria` + `contract_meta` (frozen validation contract, 15-30 criteria, test command), `sprint_progress` (objective + milestones), `execution_log` (append-only event log; no rotation, no archive). **Proportionality**: the ledger is for feature suites — a question or a one-off fix does not open a sprint (one log entry if the ledger exists). The database stays local: `.agent/` and `.agents/` are git-ignored from initialization and never committed (heavy binary, installed scripts — they would bloat public repositories and skew their language stats). A legacy 4-file ledger (`feature_list*.json`, `contract.md`, `progress.md`, `log.md`) is auto-migrated with backup on the first `bootstrap`.
 
 1. **Bootstrap** — on every start, crash or restart, run `bootstrap`: bounded state (active features, sprint, contract, the last 20 log entries). Never query the full history unfiltered — use `search-log`.
 2. **Action** — `log <type> "<message>"` (type ∈ init | gen | eval | fix | sync | done | err, ~200 chars) at the start and at the end of each action.
@@ -51,11 +51,13 @@ The dependency (`duckdb>=1.1.0`) is declared inside the script (PEP 723): uv bui
 - Once the PR is submitted: **stop** (no waiting loop); merge only on explicit instruction.
 - **Never a destructive git command on live work**: `reset --hard`, `clean -fd`, `checkout -- .` / `restore .`, `push --force` on a shared branch. To undo a test commit: `git reset --soft HEAD~1`, then targeted cleanup.
 - Push only on the user's explicit request.
+- **No CI on GitHub's infrastructure**: agents never create, edit or enable GitHub Actions workflows (`.github/workflows/`) — builds and validation run locally; modifying an existing workflow requires a formal explicit request.
 - **Pre-commit checklist**: tests/linters green · no secret in the diff · maintained docs up to date · ledger synced.
 
 ## §5 Security & integrity
 
 - **No secrets** in code, commits, logs or on screen (user paths, e-mails, tokens) → env vars / dummy placeholders.
+- **No personal names in content**: never write a person's real name in repository files (READMEs, docs, code, package metadata, licenses, credits) — attribute to the project or a GitHub handle; identity lives only in git commit metadata. Fix existing occurrences on sight.
 - **Never delete** state files, databases, archives or business data. Any ambiguous deletion: **restate the list** to the user and get confirmation BEFORE executing.
 - **Never shut down/restart/sleep the machine** without a formal explicit request.
 - **Irreversible or external actions** (publishing, upload, PROD write, sending messages): first generate the control artifacts, then wait for explicit approval in the chat.
@@ -63,9 +65,9 @@ The dependency (`duckdb>=1.1.0`) is declared inside the script (PEP 723): uv bui
 
 ## §6 Truth & validation
 
-- **Read the upstream docs BEFORE acting** — before testing, debugging, upgrading or adopting any engine, model or third-party tool, fetch its official documentation into a scratch area and read the relevant pages: the upstream repo's `docs/` (many engines document one page per model/feature that the root README omits), model/dataset cards, `/llms.txt` endpoints (append `.md` to page URLs where supported). Never rely on memorized flags or assumed capabilities: wrong wirings, "not implemented" limits and hidden features (extra routes, options, quant formats) are routinely found there. Pin the doc version/commit at fetch time and cite it in the test verdict or decision.
+- **Read the upstream docs BEFORE acting** — before testing, debugging, upgrading or adopting any engine, model or tool, fetch its official docs and read the relevant pages: the upstream repo's `docs/` (one page per model/feature, often absent from the root README), model/dataset cards, `/llms.txt` endpoints (append `.md` to page URLs where supported). Never rely on memorized flags or assumed capabilities: wrong wirings, "not implemented" limits and hidden features are routinely found there. Pin the doc version/commit at fetch time and cite it in the test verdict or decision.
 - "Verified" = **actually executed** (exit 0) or **visually inspected** (screenshot/render looked at) — never inferred from code, intentions or logs.
-- Every factual claim (number, color, presence of an asset) is backed by a measurement or a screenshot kept as evidence.
+- Every factual claim is backed by a measurement or a screenshot kept as evidence.
 - After a fix: re-validate through the **real full path**, not through a harness that bypasses it.
 - **Never disable, skip or weaken a test** to get green; an unresolved failure or a skipped step is reported as is.
 - Documentation: any behavior change → update the repo's maintained docs before closing the task.
@@ -75,35 +77,36 @@ The dependency (`duckdb>=1.1.0`) is declared inside the script (PEP 723): uv bui
 
 ---
 
-## §7 Project-specific (free — recommended cap ~150 lines)
-
-> **To fill in per repository.** Useful sections:
+## §7 Project-specific
 
 ### Mission / scope
-*(1 paragraph: what the project does, what it does not do)*
+Special GitHub profile repository (`laurentvv/laurentvv`) rendering the landing page of `https://github.com/laurentvv`. It showcases the three main open-source engineering pillars (**AI Ops / MCP & Agent Tooling**, **Native Rust Systems & Ops Tools**, and **Local AI on Vulkan/GGUF**) using self-contained light/dark SVG assets and concise Markdown tables. It does not host application code or CI workflows.
 
 ### Declared locations (deviations from the common block)
-- Ledger: `.agent/state.duckdb` via the agent-state skill (default; another CLI path here); a legacy 4-file ledger is auto-migrated on first bootstrap
-- Extended statuses: *(e.g. `awaiting_playtest`)*; extended log types: *(e.g. `rot`, `plan`)*
-- Machine / shell: Windows + Git Bash (default) | PowerShell 7 | WSL / Linux; commands required/forbidden in this repo
-- Language deviation: *(default from §1: repository content in English, chat replies to the user in French)*
+- Ledger: `.agent/state.duckdb` via `.agents/skills/agent-state/scripts/state_agents.py` (default).
+- Machine / shell: Windows 11 + Git Bash (default) / PowerShell for SVG rendering checks (`rsvg-convert`).
+- Language: English for all repository content (`README.md`, SVG labels, commit messages, ledger); French for chat replies (default §1).
 
 ### Key commands
 ```bash
-# state ledger (canon §2): uv run --no-project .agents/skills/agent-state/scripts/state_agents.py bootstrap
-# §3 gate (pinned versions, identical in CI): lint ... ; tests ...
-# build: ...
-# run: ...
-# large repositories (>5k files): fast indexed code search with tgrep (on PATH; index dir `.tgrep/` stays git-ignored)
-# tgrep serve . --exclude .godot    # persistent server, auto-builds the index; plain `tgrep -- "pattern" .` uses it automatically
+# state ledger (canon §2)
+uv run --no-project .agents/skills/agent-state/scripts/state_agents.py bootstrap
+
+# render SVGs locally for visual inspection (required after any SVG edit)
+for f in header-dark header-light focus-dark focus-light; do
+  rsvg-convert -w 1920 "assets/${f}.svg" -o "scratch/${f}.png"
+done
 ```
 
 ### Business invariants (never break)
-*(schema contracts, product invariants, domain rules…)*
+- **Handle only (§5)**: never put a real personal name in `README.md` or SVG assets — use `@laurentvv` / `laurentvv`.
+- **Zero external image dependencies**: never embed third-party dynamic stats cards (e.g. `ghstats.dev`, which returned HTTP 500 on 2026-11-25) or remote fonts/scripts inside SVGs. Every visual lives in `assets/` with paired `*-dark.svg` and `*-light.svg` variants loaded via `<picture>` + `prefers-color-scheme`.
+- **No stale hardcoded vanity counters**: do not hardcode star counts or repo totals that drift out of date; keep factual technical specs and verified links only.
+- **Visual verification (§6)**: any edit to `assets/*.svg` must be rendered to PNG and visually inspected before closing.
+- **No GitHub Actions (§4)**: never add `.github/workflows/` to this repository.
 
 ### Pitfalls & lessons (dated format)
-- **[YYYY-MM-DD] context** — rule kept. *(Lessons live HERE, never in the common block: it is overwritten on every sync.)*
+- **[2026-11-25] Third-party profile stats card outage** — `ghstats.dev` returned HTTP 500 and broke the profile README; replaced with local light/dark editorial SVGs checked into `assets/`.
 
 ### References
-- Long context: `PROJECT_MEMORY.md` / `docs/memory_bank/…`
-- Cross-repo ecosystem: *(single shared source — do not duplicate it here)*
+- Public profile: `https://github.com/laurentvv`
